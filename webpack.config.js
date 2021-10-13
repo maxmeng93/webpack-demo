@@ -109,13 +109,8 @@ module.exports = function (env, argv) {
           messages: [`You application is running here http://localhost:${PORT}`],
           notes: []
         },
-        // onErrors: function (severity, errors) {
-        //   // You can listen to errors transformed and prioritized by the plugin
-        //   // severity can be 'error' or 'warning'
-        // },
-        // clearConsole: true,
-        // additionalFormatters: [],
-        // additionalTransformers: []
+        additionalFormatters: [],
+        additionalTransformers: []
       }),
     ]
   }
