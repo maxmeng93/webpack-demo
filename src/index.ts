@@ -1,8 +1,10 @@
 import person from './person';
 console.log(person);
 
-let str: string = '';
+let str = '';
 str = "2";
+
+console.log(str);
 
 const app = document.getElementById('app');
 (app as HTMLElement).innerText = '这是一个网页';

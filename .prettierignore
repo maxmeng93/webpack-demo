@@ -1,0 +1,13 @@
+**/*.svg
+package.json
+
+dist
+public
+
+yarn.lock
+.gitignore
+.npmignore
+.prettierignore
+.DS_Store
+.editorconfig
+.eslintignore
