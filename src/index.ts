@@ -1,5 +1,6 @@
 import person from './person';
 console.log(person);
+console.log(person);
 
 let str = '';
 str = "2";
