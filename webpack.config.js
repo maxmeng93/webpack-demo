@@ -5,6 +5,8 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const EslintWebpackPlugin = require('eslint-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const PORT = 8080;
 
@@ -47,16 +49,9 @@ module.exports = function (env, argv) {
           exclude: /node_modules/,
         },
         {
-          test: /\.css$/,
+          test: /\.(sa|sc|c)ss$/,
           use: [
-            'style-loader',
-            'css-loader',
-            'postcss-loader',
-          ],
-        },
-        {
-          test: /\.(sa|sc)ss$/,
-          use: [
+            // MiniCssExtractPlugin.loader,
             'style-loader',
             'css-loader',
             'postcss-loader',
@@ -69,16 +64,26 @@ module.exports = function (env, argv) {
             {
               loader: 'url-loader',
               options: {
-                limit: 2048,
+                limit: 10240,
+                fallback: {
+                  loader: 'file-loader',
+                  options: {
+                    name: 'images/[name].[hash:8].[ext]'
+                  }
+                }
               }
-            },
-            'file-loader',
+            }
           ]
         },
         {
           test: /\.(woff|woff2|eot|ttf|otf)$/,
           use: [
-            'file-loader'
+            {
+              loader: 'file-loader',
+              options: {
+                name: 'fonts/[name].[hash:8].[ext]'
+              }
+            }
           ]
         },
       ]
@@ -88,6 +93,10 @@ module.exports = function (env, argv) {
       new CaseSensitivePathsPlugin(),
       // 构建时使用，开发时不能用
       // new CleanWebpackPlugin(),
+      // new MiniCssExtractPlugin({
+      //   filename: "[name].[hash].css",
+      //   chunkFilename: "[id].css",
+      // }),
       new HtmlWebpackPlugin({
         title: 'MaxMeng',
         template: 'public/index.html'
@@ -112,6 +121,8 @@ module.exports = function (env, argv) {
         additionalFormatters: [],
         additionalTransformers: []
       }),
+      // 打包分析
+      // new BundleAnalyzerPlugin(),
     ]
   }
 }

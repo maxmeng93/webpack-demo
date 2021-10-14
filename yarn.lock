@@ -3455,6 +3455,13 @@ mimic-fn@^2.1.0:
   resolved "https://registry.npm.taobao.org/mimic-fn/download/mimic-fn-2.1.0.tgz#7ed2c2ccccaf84d3ffcb7a69b57711fc2083401b"
   integrity sha1-ftLCzMyvhNP/y3pptXcR/CCDQBs=
 
+mini-css-extract-plugin@^2.4.2:
+  version "2.4.2"
+  resolved "https://registry.npmmirror.com/mini-css-extract-plugin/download/mini-css-extract-plugin-2.4.2.tgz?cache=0&sync_timestamp=1633618859971&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fmini-css-extract-plugin%2Fdownload%2Fmini-css-extract-plugin-2.4.2.tgz#b3508191ea479388a4715018c99dd3e6dd40d2d2"
+  integrity sha1-s1CBkepHk4ikcVAYyZ3T5t1A0tI=
+  dependencies:
+    schema-utils "^3.1.0"
+
 minimalistic-assert@^1.0.0:
   version "1.0.1"
   resolved "https://registry.npm.taobao.org/minimalistic-assert/download/minimalistic-assert-1.0.1.tgz#2e194de044626d4a10e7f7fbc00ce73e83e4d5c7"
