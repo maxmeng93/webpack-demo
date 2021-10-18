@@ -1,5 +1,2 @@
-export default {
-  name: 'MaxMeng',
-  age: 28,
-  title: '这是一句文本'
-}
+export const bar = 'bar';
+export const foo = 'foo';

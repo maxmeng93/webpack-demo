@@ -5,8 +5,8 @@
   "license": "MIT",
   "scripts": {
     "start": "concurrently --raw \"npm:serve\" \"npm:type-check\"",
-    "serve": "webpack-dev-server --mode=development",
-    "build": "webpack --mode=production",
+    "serve": "webpack-dev-server",
+    "build": "webpack --env build",
     "type-check": "tsc --watch",
     "babel-build": "npx babel ./src/index.ts --out-file ./dist/babel-build.js",
     "lint": "eslint --ext .ts --ext .tsx src/",

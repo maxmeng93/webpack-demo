@@ -1,22 +1,5 @@
-import person from './person';
-console.log(person);
+import { bar } from './person';
+console.log(bar);
 
-let str = '';
-str = "2";
-
-console.log(str);
-
-const app = document.getElementById('app');
-(app as HTMLElement).innerText = '这是一个网页';
-
-const obj = {
-  a: 1,
-  b: 2,
-  c: 3,
-  d: 4,
-}
-
-const { a, b, ...z } = obj;
-console.log(a);
-console.log(b);
-console.log(z);
+const app = document.getElementById('app') as HTMLElement;
+app.innerText = 'maxmeng93';
