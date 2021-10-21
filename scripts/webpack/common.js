@@ -10,7 +10,7 @@ const PORT = 8080;
 const rootPath = '../../';
 
 module.exports = function (env, argv) {
-  const is_dev = env.serve || env.WEBPACK_SERVE;
+  const is_dev = env.WEBPACK_SERVE;
 
   return {
     entry: path.join(__dirname, rootPath, 'src/index.ts'),

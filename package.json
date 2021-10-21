@@ -5,12 +5,11 @@
   "license": "MIT",
   "scripts": {
     "start": "concurrently --raw \"npm:serve\" \"npm:type-check\"",
-    "serve": "webpack-dev-server",
-    "build": "webpack --env build",
+    "serve": "webpack-dev-server --config ./scripts/webpack/serve.js",
+    "build": "webpack --config ./scripts/webpack/build.js",
+    "analyz": "webpack --env analyz --config ./scripts/webpack/build.js",
     "type-check": "tsc --watch",
-    "babel-build": "npx babel ./src/index.ts --out-file ./dist/babel-build.js",
-    "lint": "eslint --ext .ts --ext .tsx src/",
-    "analyz": "npm_config_report=true npm run build"
+    "lint": "eslint --ext .ts --ext .tsx src/"
   },
   "dependencies": {
     "core-js": "^3.18.2"
